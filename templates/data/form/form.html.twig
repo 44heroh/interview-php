@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+  {% if(form is defined) %}
+    {{ form_start(form) }}
+    {{ form_row(form.number) }}
+    <input type = "submit" name = "submit" value = "Отправить">
+    {{ form_end(form) }}
+  {% endif %}
+  {% if(id is defined) %}
+    {{ include('data/item/item.html.twig', {id: id}) }}
+  {% endif %}
+{% endblock %}
